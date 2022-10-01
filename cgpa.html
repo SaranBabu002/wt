@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>CGPA</title>
+<script>
+function convert(mark)
+{
+if(mark>=91 && mark<=100) return 10;
+else if(mark>80 && mark<=90) return 9;
+else if(mark>70 && mark<=80) return 8;
+else if(mark>60 && mark<=70) return 7;
+else if(mark>50 && mark<=60) return 6;
+else if(mark<=50) return 0;
+}
+function cal()
+{
+var a=parseInt(document.querySelector("#c1").value); var b=parseInt(document.querySelector("#c2").value); var c=parseInt(document.querySelector("#c3").value); var d=parseInt(document.querySelector("#c4").value); var e=parseInt(document.querySelector("#c5").value); var f=parseInt(document.querySelector("#c6").value); var g=parseInt(document.querySelector("#c7").value);
+ 
+var h=parseInt(document.querySelector("#c8").value);
+
+
+var mm1=convert(parseInt(document.querySelector("#m1").value)); var mm2=convert(parseInt(document.querySelector("#m2").value)); var mm3=convert(parseInt(document.querySelector("#m3").value)); var mm4=convert(parseInt(document.querySelector("#m4").value)); var mm5=convert(parseInt(document.querySelector("#m5").value)); var mm6=convert(parseInt(document.querySelector("#m6").value)); var mm7=convert(parseInt(document.querySelector("#m7").value)); var mm8=convert(parseInt(document.querySelector("#m8").value));
+var sum,cgpa,tot; tot=(a*mm1)+(b*mm2)+(c*mm3)+(d*mm4)+(e*mm5)+(f*mm6)+(g*mm7)+(h*mm8);
+sum=a+b+c+d+e+f+g+h; cgpa=tot/sum;
+document.querySelector("#res").innerHTML = cgpa;
+}
+
+
+</script>
+</head>
+<body style="background-image: url('/calcul.jpg');"
+
+
+<form>
+<center>
+<h1>CGPA CALCULATION</h1>
+<pre>
+<h2>
+Course 1:<input type="text" placeholder="credit" id="c1"> <input type="text" placeholder="mark1" id="m1"><br><br>
+ 
+Course 2:<input type="text" placeholder="credit" id="c2"> <input type="text" placeholder="mark2" id="m2"><br><br>
+Course 3:<input type="text" placeholder="credit" id="c3"> <input type="text" placeholder="mark3" id="m3"><br><br>
+Course 4:<input type="text" placeholder="credit" id="c4"> <input type="text" placeholder="mark4" id="m4"><br><br>
+Course 5:<input type="text" placeholder="credit" id="c5"> <input type="text" placeholder="mark5" id="m5"><br><br>
+Course 6:<input type="text" placeholder="credit" id="c6"> <input type="text" placeholder="mark6" id="m6"><br><br>
+Course 7:<input type="text" placeholder="credit" id="c7"> <input type="text" placeholder="mark7" id="m7"><br><br>
+Course 8:<input type="text" placeholder="credit" id="c8"> <input type="text" placeholder="mark8" id="m8">
+</h2>
+<button type="button" onclick="cal()"><h3>Calculate</h3></button>
+<h1 id="res"></h1>
+</pre></center>
+</form>
+</body>
+</html>
